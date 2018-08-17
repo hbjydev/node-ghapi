@@ -1,0 +1,14 @@
+{
+    "name": "node-ghapi",
+    "version": "1.0.0",
+    "description": "A simple library to interact with the GitHub API",
+    "main": "index.js",
+    "scripts": {
+        "test": "test/index.js"
+    },
+    "author": "Hayden Young <hayden@haydenbjyoung.me> (https://haydenbjyoung.me)",
+    "license": "MIT",
+    "dependencies": {
+        "node-fetch": "^2.2.0"
+    }
+}
