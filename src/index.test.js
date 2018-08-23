@@ -90,7 +90,7 @@ describe('Repositories', () => {
     expect(result).to.be.an('array');
   });
   it('getArchive should return a promise representing the archive\'s buffer', async () => {
-    let result = await ghapi.repos.getArchive('Microsoft/vscode',{format: 'zipball', branch: ''});
-    expect(result).to.be.an('array');
+    let result = await ghapi.repos.getArchive('Microsoft/vscode',{format: 'zipball', branch: 'electron-3.0.x'});
+    expect(result).to.be.a('Promise');
   });
 });
