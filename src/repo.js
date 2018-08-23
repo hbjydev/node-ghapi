@@ -165,7 +165,7 @@ function getTags (expression) {
  * @function
  * @memberof repos
  * @param {string} repo The repository, formatted like 'owner/repoName'
- * @param {Object} options Provide format and branch in this paramater. Example: {format: 'zipball', branch: "somebranch"}
+ * @param {Object} options Provide format and branch in this paramater. Example: {format: 'zipball', branch: "somebranch"}. Format is either tarball or zipball
  * @example
  * await ghapi.repos.getArchive('haydennyyy/node-ghapi')
  * @example
