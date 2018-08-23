@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/haydennyyy/node-ghapi.svg?branch=master)](https://travis-ci.org/haydennyyy/node-ghapi)
 [![npm](https://img.shields.io/npm/dt/node-ghapi.svg)](https://npmjs.org/node-ghapi)
 
-A Node.js library to get data from the public GitHub API.
+A Node.js library to get data from the public GitHub API. This branch is a class-based version.
 
 ## Installing
 **`node-ghapi` was built in Node 8! I cannot guarantee compatibility with anything below or above this!**
