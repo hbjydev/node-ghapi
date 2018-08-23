@@ -1,7 +1,7 @@
 # node-ghapi
 [![Build Status](https://img.shields.io/travis/com/haydennyyy/node-ghapi.svg)](https://travis-ci.org/haydennyyy/node-ghapi)
 
-[![npm](https://img.shields.io/npm/dt/localeval.svg)](https://npmjs.org/node-ghapi)
+[![npm](https://img.shields.io/npm/dt/node-ghapi.svg)](https://npmjs.org/node-ghapi)
 
 A Node.js library to get data from the public GitHub API.
 
