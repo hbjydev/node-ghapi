@@ -3,6 +3,8 @@
   "dest": "./docs",
   "app": {
     "title": "node-ghapi Documentation",
+    "base": "/node-ghapi",
+    "server": "github",
     "entrance": "content:readme"
   },
   "template": {
