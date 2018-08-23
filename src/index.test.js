@@ -58,24 +58,20 @@ describe('Repositories', () => {
     expect(result).to.be.an('array');
   });
   it('getBlobs should return an array of \'blobs\'', async () => {
-    let result = await ghapi.repos.getBlobs('haydennyyy/node-ghapi', '580abf41bb6f2416303ef40500dd3e16d15bcc');
-    expect(result).to.be.an('array');
+    let result = await ghapi.repos.getBlobs('haydennyyy/node-ghapi', '3a4c8581b3aa0d4f9192de158bd4223a90d646b5');
+    expect(result).to.be.an('object');
   });
   it('getBranches should return a list of branches', async () => {
     let result = await ghapi.repos.getBranches('Microsoft/vscode');
-    expect(result).to.be.an('array');
-  });
-  it('getCollaborators should return a list of collaborators', async () => {
-    let result = await ghapi.repos.getCollaborators('Microsoft/vscode');
     expect(result).to.be.an('array');
   });
   it('getComments should return an array of comments', async () => {
     let result = await ghapi.repos.getComments('Microsoft/vscode');
     expect(result).to.be.an('array');
   });
-  it('getLanguages should return an array of languages used in the repo', async () => {
+  it('getLanguages should return an object with languages used in the repo', async () => {
     let result = await ghapi.repos.getLanguages('Microsoft/vscode');
-    expect(result).to.be.an('array');
+    expect(result).to.be.an('object');
   });
   it('getTopics should return an array of topics of the repository', async () => {
     let result = await ghapi.repos.getTopics('Microsoft/vscode');

@@ -77,20 +77,6 @@ function getBranches (expression) {
 }
 
 /**
- * Gets a list of collaborators of a repository by expression. Must be run asynchronously.
- * @function
- * @memberof repos
- * @param {string} expression The expression, formatted like `owner/repoName`.
- * @example
- * await ghapi.repos.getCollaborators('haydennyyy/node-ghapi');
- */
-function getCollaborators (expression) {
-  return fetch(`https://api.github.com/repos/${expression}/collaborators`, {
-    headers: { 'User-Agent': 'node-ghapi' }
-  }).then(repo => repo.json());
-}
-
-/**
  * Gets a list of comments of a repository by expression. Must be run asynchronously.
  * @function
  * @memberof repos
@@ -230,6 +216,6 @@ function getCommits (expression, options) {
 }
 
 module.exports = { get, getForks, getAssignees,
-  getBlobs, getBranches, getCollaborators,
-  getComments, getTopics, getLanguages,
-  getTeams, getTags, getArchive }
+  getBlobs, getBranches, getComments,
+  getTopics, getLanguages, getTeams, 
+  getTags, getArchive }
