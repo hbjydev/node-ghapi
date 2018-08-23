@@ -1,8 +1,13 @@
+/**
+ * User interactivity.
+ * @namespace users
+ */
 const fetch = require('node-fetch');
 
 /**
  * Gets a User by username. Must be run asynchronously.
  * @function
+ * @memberof users
  * @param {string} username The username of the user to find. (`login` parameter on the API)
  * @example
  * await ghapi.users.get('haydennyyy');
@@ -16,6 +21,7 @@ function get (username) {
 /**
  * Gets a user's repositories by username. Must be run asynchronously.
  * @function
+ * @memberof users
  * @param {string} username The username of the user to find repos for. (`login` parameter on the API)
  * @example
  * await ghapi.users.getRepos('haydennyyy');
