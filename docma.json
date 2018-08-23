@@ -3,7 +3,7 @@
   "dest": "./docs",
   "app": {
     "title": "node-ghapi Documentation",
-    "base": "/node-ghapi",
+    "base": "/",
     "server": "github",
     "entrance": "content:readme"
   },
@@ -11,10 +11,15 @@
     "options": {
       "title": {
         "label": "node-ghapi Documentation",
-        "href": "#"
+        "href": "/"
       },
       "navbar": {
         "menu": [
+          {
+            "label": "View documentation",
+            "href": "https://ghapi.js.org/?api",
+            "iconClass": "fab fa-book fa-2x"
+          },
           {
             "href": "https://github.com/haydennyyy/node-ghapi",
             "iconClass": "fab fa-github fa-2x"

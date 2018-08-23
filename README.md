@@ -8,4 +8,4 @@ My preferred package manager is [yarn](https://yarnpkg.com). I'll use that here.
 - `yarn add node-ghapi`
 
 ## Usage
-Usage information can be found on the [documentation](https://haydennyyy.github.io/node-ghapi/?api).
+Usage information can be found on the [documentation](https://ghapi.js.org/?api).
