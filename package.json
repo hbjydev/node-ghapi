@@ -1,6 +1,6 @@
 {
     "name": "node-ghapi",
-    "version": "1.1.7",
+    "version": "1.2.0",
     "description": "A simple library to interact with the GitHub API",
     "main": "index.js",
     "scripts": {
