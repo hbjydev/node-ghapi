@@ -89,4 +89,9 @@ describe('Repositories', () => {
   //   let result = await ghapi.repos.getArchive('Microsoft/vscode',{format: 'zipball', branch: 'electron-3.0.x'});
   //   expect(result).to.be.a('promise');
   // });
+  it('getReadme should return the contents of the repository\'s README', async () => {
+    let result = await ghapi.repos.getReadme('haydennyyy/node-ghapi');
+    console.log(result);
+    expect(result).to.be.an('object');
+  });
 });

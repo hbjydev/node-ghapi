@@ -215,7 +215,21 @@ function getCommits (expression, options) {
   }).then(repo => repo.json());
 }
 
+/**
+ * Gets the contents of the repository's README.
+ * @function
+ * @memberof repos
+ * @param {string} expression The expression, formatted like `owner/repoName`.
+ * @example
+ * await ghapi.repos.getReadme('haydennyyy/node-ghapi');
+ */
+function getReadme (expression) {
+  return fetch(`https://api.github.com/repos/${expression}/readme`, {
+    header: { 'User-Agent': 'node-ghapi' }
+  }).then(readme => readme.json());
+}
+
 module.exports = { get, getForks, getAssignees,
   getBlobs, getBranches, getComments,
   getTopics, getLanguages, getTeams, 
-  getTags, getArchive }
+  getTags, getArchive, getReadme }
