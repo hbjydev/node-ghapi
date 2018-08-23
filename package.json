@@ -4,7 +4,7 @@
     "description": "A simple library to interact with the GitHub API",
     "main": "index.js",
     "scripts": {
-        "test": "test/index.js"
+        "test": "mocha src/index.test.js"
     },
     "author": "Hayden Young <hayden@haydenbjyoung.me> (https://haydenbjyoung.me)",
     "license": "MIT",

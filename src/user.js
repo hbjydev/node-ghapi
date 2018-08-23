@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
   /**
-   * Gets a User by username.
+   * Gets a User by username. Must be run asynchronously.
    * @function
    * @param {string} username The username of the user to find. (`login` parameter on the API)
    * @example
@@ -15,7 +15,7 @@ module.exports = {
   },
 
   /**
-   * Gets a user's repositories by username.
+   * Gets a user's repositories by username. Must be run asynchronously.
    * @function
    * @param {string} username The username of the user to find repos for. (`login` parameter on the API)
    * @example
