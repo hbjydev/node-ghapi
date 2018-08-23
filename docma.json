@@ -18,7 +18,7 @@
           {
             "label": "View documentation",
             "href": "https://ghapi.js.org/?api",
-            "iconClass": "fab fa-book fa-2x"
+            "iconClass": "fas fa-book fa-2x"
           },
           {
             "href": "https://github.com/haydennyyy/node-ghapi",
