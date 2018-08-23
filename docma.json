@@ -1,0 +1,22 @@
+{
+  "src": ["./src/**/*.js", "./README.md"],
+  "dest": "./docs",
+  "app": {
+    "title": "node-ghapi Documentation",
+    "entrance": "content:readme"
+  },
+  "template": {
+    "title": {
+      "label": "node-ghapi Documentation",
+      "href": "#"
+    },
+    "navbar": {
+      "menu": [
+        {
+          "href": "https://github.com/haydennyyy/node-ghapi",
+          "iconClass": "fab fa-github fa-2x"
+        }
+      ]
+    }
+  }
+}

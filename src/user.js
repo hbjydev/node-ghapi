@@ -8,8 +8,8 @@ module.exports = {
    * @example
    * await ghapi.users.get('haydennyyy');
    */
-  get: async username => {
-    return await fetch('https://api.github.com/users/' + username, {
+  get: username => {
+    return fetch('https://api.github.com/users/' + username, {
       headers: { 'User-Agent': 'node-ghapi' }
     }).then(user => user.json())
   },
@@ -24,6 +24,6 @@ module.exports = {
   getRepos: username => {
     return fetch(`https://api.github.com/users/${username}/repos`, {
       headers: { 'User-Agent': 'node-ghapi' }
-    }).then(repos => repos.json());
+    }).then(repos => repos.json())
   }
 }
