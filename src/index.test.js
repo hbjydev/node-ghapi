@@ -58,7 +58,7 @@ describe('Repositories', () => {
     expect(result).to.be.an('array');
   });
   it('getBlobs should return an array of \'blobs\'', async () => {
-    let result = await ghapi.repos.getBlobs('haydennyyy/node-ghapi', '09a899b58254f1bf1f215c7cec348bb5b64af57b');
+    let result = await ghapi.repos.getBlobs('haydennyyy/node-ghapi', '580abf41bb6f2416303ef40500dd3e16d15bcc');
     expect(result).to.be.an('array');
   });
   it('getBranches should return a list of branches', async () => {

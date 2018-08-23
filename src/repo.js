@@ -9,6 +9,7 @@ const fetch = require('node-fetch');
  * @function
  * @memberof repos
  * @param {string} expression The expression, formatted like `owner/repoName`.
+ * @returns {repository} The repository found
  * @example
  * await ghapi.repos.get('haydennyyy/node-ghapi');
  */
@@ -159,7 +160,37 @@ function getTags (expression) {
   }).then(repo => repo.json());
 }
 
+/**
+ * Gets archive of a repository by repo, format and branch. Must be run asynchronously.
+ * @function
+ * @memberof repos
+ * @param {string} repo The repository, formatted like 'owner/repoName'
+ * @param {Object} options Provide format and branch in this paramater. Example: {format: 'zipball', branch: "somebranch"}
+ * @example
+ * await ghapi.repos.getArchive('haydennyyy/node-ghapi')
+ * @example
+ * await ghapi.repos.getArchive('haydennyyy/node-ghapi',{format: 'zipball'})
+ * @example
+ * await ghapi.repos.getArchive('haydennyyy/node-ghapi',{format: 'zipball', branch: 'somebranch'})
+ * @example
+ * await ghapi.repos.getArchive('haydennyyy/node-ghapi',{branch: 'somebranch'})
+ * @returns {Promise} The promise from the request. It will be either a stream or an object, depending on whether or not the archive is found.
+ */
+function getArchive (repo, options){
+  //Apply defaults if option not specified
+  format = (options.format || `tarball`).toLowerCase();
+  branch = (options.branch || `master`).toLowerCase();
+
+  if (format!=`tarball` && format!=`zipball`){
+    throw new Error('Specified format must be "tarball" or "zipball".');
+  }
+  return fetch(`https://api.github.com/repos/${repo}/${format}/${branch}`, {
+    headers: { 'User-Agent': 'node-ghapi' },
+    redirect: 'follow'
+  });
+}
+
 module.exports = { get, getForks, getAssignees,
   getBlobs, getBranches, getCollaborators,
   getComments, getTopics, getLanguages,
-  getTeams, getTags }
+  getTeams, getTags, getArchive }
