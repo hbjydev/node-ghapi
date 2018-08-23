@@ -1,18 +1,10 @@
 language: node_js
 node_js:
-  - "8"
-jobs:
-  - before_script:
-      - export PATH="$HOME/.yarn/bin:$PATH"
-      - yarn global install docma
-    script:
-      - yarn
-      - yarn test
-  - stage: deploy
-    script: docma -c docma.json
-    deploy:
-      provider: npm
-      email: "hayden@haydenbjyoung.me"
-      api_key: ""
-      on:
-        tags: true
+- '8'
+deploy:
+  provider: npm
+  email: hayden@haydenbjyoung.me
+  api_key:
+    secure: D9/9gQkIEXs2UFtGCd3LYvvFMtfjbkmD/Ujy1ZRQOf6+z92bj/0EjK+BmlrDNCFZM1JW2KgniFXivzqRmPsTzZ0twoIfzd4lYnVK6Ydk2BQjTin9ytV4s7+j41hXLxtYLrD7CiSzat9H+LgDQ4VBTXxlbAkO+3FU4k6WdDy8k09ZTaS0dQUCpAt1UxCf2BE0n+B4mzI2SFFZ146wFvR+sYU6U3VI2lOKUlaVVR3PrRgr6UpgfELZh+8AcqBpf6Xmw0A3OoGTg8igMwUlkVpphXhZ4WHXdrB51p3pkKuSKXZUpnyvYUMtUD8kyqxbYLgWESdZsbEjh+0p8/B6hfbCZW1jOwGXw/djVbRJSR2O437Ld9qlwXWj2njMBW/m4ymYSLtFtZ6Pf1X9eOL/Xa+8qiO+eT4P4IJk+JwnHrOzC3nZYAzfxM/lgwmaLtaJ5GdhzRryGEBb9siuWT1ky+gzGLPQ3Nr+lwlaKeL4d5KxRP7FE9ao5qW3Pd9mGkMYtAnDtFyaUD7Z0qcrDq4vgiN0YcYrz2SnTADXTQEG6B/i4nGpaGvqRCf/E9bXqXL+G02Kcc86ge0PBZv2u0qwRjFh9qmxakTB8URexCQq3UhfmhCnjc5vc4N8jINy+yXj6ipB6AseHuPzcfU8JxJLgpBy3ti02es8jkg7rtbzhVIxKFg=
+  on:
+    repo: haydennyyy/node-ghapi
