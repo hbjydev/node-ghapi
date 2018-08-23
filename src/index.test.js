@@ -1,13 +1,21 @@
 const { expect } = require('chai');
-const {  user  } = require('./index');
+const Client = require('./index');
+let ghapi = new Client();
 
 describe('Users', () => {
   it('.raw should return a user object in JSON', async () => {
-    let User = new user('haydennyyy').raw;
-    expect(await User).to.be.an('object');
+    let raw = ghapi.users('haydennyyy').raw;
+    expect(await raw).to.be.an('object');
   });
   it('.repos should return an array of repositories in JSON', async () => {
-    let User = new user('haydennyyy').repos;
-    expect(await User).to.be.an('array');
+    let repos = ghapi.users('haydennyyy').repos;
+    expect(await repos).to.be.an('array');
+  });
+});
+
+describe('Repositories', () => {
+  it('.raw should return a repo object in JSON', async () => {
+    let raw = ghapi.repos('haydennyyy/node-ghapi').raw;
+    expect(await raw).to.be.an('object');
   });
 });

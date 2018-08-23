@@ -7,9 +7,11 @@ const fetch = require('node-fetch');
 class User {
   /**
    * @param {string} username The username of the user to get information for.
+   * @param {string} token The authentication token
    */
-  constructor(username) {
+  constructor(username, token) {
     this.baseURL = 'https://api.github.com/users/' + username;
+    this.token = token;
   }
 
   /**
@@ -17,7 +19,8 @@ class User {
    */
   get raw() {
     return fetch(this.baseURL, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(user => user.json());
   }
   
@@ -26,7 +29,8 @@ class User {
    */
   get repos() {
     return fetch(this.baseURL + '/repos', {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(repos => repos.json())
   }
   
@@ -35,7 +39,8 @@ class User {
    */
   get gists() {
     return fetch(`${this.baseURL}/gists`, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(gists => gists.json())
   }
   
@@ -44,7 +49,8 @@ class User {
    */
   get followers() {
     return fetch(`https://api.github.com/users/${username}/followers`, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(followers => followers.json())
   }
   
@@ -54,7 +60,8 @@ class User {
    */
   isFollowing(user) {
     return fetch(`${this.baseURL}/following/${user}`, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(r => {
       return (r.status === 204) ? true : false;
     });
@@ -65,7 +72,8 @@ class User {
    */
   get starred () {
     return fetch(`${this.baseURL}/starred`, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(starred => starred.json())
   }
   
@@ -74,7 +82,8 @@ class User {
    */
   get subscribed () {
     return fetch(`${this.baseURL}/subscriptions`, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(subbed => subbed.json())
   }
   
@@ -83,7 +92,8 @@ class User {
    */
   get orgs () {
     return fetch(`${this.baseURL}/orgs`, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(orgs => orgs.json())
   }
   
@@ -92,7 +102,8 @@ class User {
    */
   get events () {
     return fetch(`${this.baseURL}/events`, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(events => events.json())
   }
   
@@ -101,7 +112,8 @@ class User {
    */
   get inboundEvents () {
     return fetch(`${this.baseURL}/received_events`, {
-      headers: { 'User-Agent': 'node-ghapi' }
+      headers: { 'User-Agent': 'node-ghapi',
+        'Authentication': (this.token == null) ? '' : `token ${this.token}` }
     }).then(events => events.json())
   }
 }
