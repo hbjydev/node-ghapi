@@ -45,7 +45,7 @@ describe('Users', () => {
 });
 
 describe('Repositories', () => {
-  it('get should return the JSON from the request.', async () => {
+  it('get should return the JSON from the request', async () => {
     let result = await ghapi.repos.get('haydennyyy/node-ghapi');
     expect(result).to.be.an('object');
   });
@@ -53,4 +53,16 @@ describe('Repositories', () => {
     let result = await ghapi.repos.getForks('Microsoft/vscode');
     expect(result).to.be.an('array');
   });
+  it('getAssignees should return an array of users', async () => {
+    let result = await ghapi.repos.getAssignees('Microsoft/vscode');
+    expect(result).to.be.an('array');
+  });
+  it('getBlobs should return an array of \'blobs\'', async () => {
+    let result = await ghapi.repos.getBlobs('Microsoft/vscode');
+    expect(result).to.be.an('array');
+  });
+  it('getBranches should return a list of branches', async () => {
+    let result = await ghapi.repos.getBranches('Microsoft/vscode');
+    expect(result).to.be.an('array');
+  })
 });
