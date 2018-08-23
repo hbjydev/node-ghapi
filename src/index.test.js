@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 const Client = require('./index');
-let ghapi = new Client();
+let ghapi = new Client(process.env.GITHUB_API_KEY);
 
 describe('Users', () => {
   it('.raw should return a user object in JSON', async () => {
