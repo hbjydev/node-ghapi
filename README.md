@@ -1,8 +1,9 @@
 # node-ghapi
+[![Build status](https://ci.appveyor.com/api/projects/status/ktwit53y9r82m436?svg=true)](https://ci.appveyor.com/project/haydennyyy/ghapi)
 A Node.js library to get data from the public GitHub API.
 
 ## Installing
-**`node-ghapi` was build in Node 8! I cannot guarantee compatibility with anything below or above this!**
+**`node-ghapi` was built in Node 8! I cannot guarantee compatibility with anything below or above this!**
 
 My preferred package manager is [yarn](https://yarnpkg.com). I'll use that here.
 - `yarn add node-ghapi`
