@@ -37,11 +37,14 @@ function getRepos (username) {
  * @function
  * @memberof users
  * @param {string} username The username of the user to find gists for. (`login` parameter on the API)
+ * @param {string} [gistID] You can specify an ID to find one gist.
  * @example
  * await ghapi.users.getGists('haydennyyy');
+ * @example
+ * await ghapi.users.getGists('octocat', 'aa5a315d61ae9438b18d');
  */
-function getGists (username) {
-  return fetch(`https://api.github.com/users/${username}/gists`, {
+function getGists (username, gistID) {
+  return fetch(`https://api.github.com/users/${username}/gists${gistID ? '/' + gistID : ''}`, {
     headers: { 'User-Agent': 'node-ghapi' }
   }).then(gists => gists.json())
 }
@@ -82,11 +85,16 @@ function isFollowing (userone, usertwo) {
  * @function
  * @memberof users
  * @param {string} username The username of the user to find the starred repos for. (`login` parameter on the API)
+ * @param {string} [expression] The Repo expression to find. Can be `:owner` or `:owner/:repo`.
  * @example
  * await ghapi.users.getStarred('haydennyyy');
+ * @example
+ * await ghapi.users.getStarred('haydennyyy', 'js-org');
+ * @example
+ * await ghapi.users.getStarred('haydennyyy', 'js-org/js.org');
  */
-function getStarred (username) {
-  return fetch(`https://api.github.com/users/${username}/starred`, {
+function getStarred (username, expression) {
+  return fetch(`https://api.github.com/users/${username}/starred${expression ? '/' + expression : ''}`, {
     headers: { 'User-Agent': 'node-ghapi' }
   }).then(starred => starred.json())
 }
