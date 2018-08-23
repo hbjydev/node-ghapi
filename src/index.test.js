@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const ghapi = require('./index');
 
-describe('users', () => {
+describe('Users', () => {
   it('get should return a user object in JSON', async () => {
     let result = await ghapi.users.get('haydennyyy');
     expect(result).to.be.an('object');
@@ -44,4 +44,13 @@ describe('users', () => {
   });
 });
 
-// TODO: Add repo unit tests
+describe('Repositories', () => {
+  it('get should return the JSON from the request.', async () => {
+    let result = await ghapi.repos.get('haydennyyy/node-ghapi');
+    expect(result).to.be.an('object');
+  });
+  it('getForks should return an array of forks', async () => {
+    let result = await ghapi.repos.getForks('Microsoft/vscode');
+    expect(result).to.be.an('array');
+  });
+});

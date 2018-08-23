@@ -1,3 +1,4 @@
 module.exports = {
-  users: require('./user')
+  users: require('./user'),
+  repos: require('./repo')
 }
