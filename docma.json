@@ -8,17 +8,19 @@
     "entrance": "content:readme"
   },
   "template": {
-    "title": {
-      "label": "node-ghapi Documentation",
-      "href": "#"
-    },
-    "navbar": {
-      "menu": [
-        {
-          "href": "https://github.com/haydennyyy/node-ghapi",
-          "iconClass": "fab fa-github fa-2x"
-        }
-      ]
+    "options": {
+      "title": {
+        "label": "node-ghapi Documentation",
+        "href": "#"
+      },
+      "navbar": {
+        "menu": [
+          {
+            "href": "https://github.com/haydennyyy/node-ghapi",
+            "iconClass": "fab fa-github fa-2x"
+          }
+        ]
+      }
     }
   }
 }
