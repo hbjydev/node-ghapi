@@ -207,7 +207,7 @@ function getCommits (expression, options) {
   let paramString = '?';  
   params.forEach(param => {
     if(paramString === '?') { paramString += param }
-    else { paramString += `&${param}` }
+    else { paramString += (param !== '') ? `&${param}` : '' }
   });
   let parameters = (paramString == '?') ? '' : paramString;
   return fetch(`https://api.github.com/repos/${expression}/commits/${sha}${parameters}`, {
