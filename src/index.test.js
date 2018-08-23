@@ -75,7 +75,7 @@ describe('Repositories', () => {
   });
   it('getTopics should return an array of topics of the repository', async () => {
     let result = await ghapi.repos.getTopics('Microsoft/vscode');
-    expect(result).to.be.an('array');
+    expect(result).to.be.an('object');
   });
   it('getTeams should return an array of teams from the repository', async () => {
     let result = await ghapi.repos.getTeams('Microsoft/vscode');
@@ -87,6 +87,6 @@ describe('Repositories', () => {
   });
   it('getArchive should return a promise representing the archive\'s buffer', async () => {
     let result = await ghapi.repos.getArchive('Microsoft/vscode',{format: 'zipball', branch: 'electron-3.0.x'});
-    expect(result).to.be.a('Promise');
+    expect(result).to.be.a('buffer');
   });
 });
