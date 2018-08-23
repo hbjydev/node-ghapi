@@ -1,6 +1,6 @@
 {
     "name": "node-ghapi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A simple library to interact with the GitHub API",
     "main": "index.js",
     "scripts": {
@@ -14,5 +14,16 @@
     "devDependencies": {
         "chai": "^4.1.2",
         "mocha": "^5.2.0"
-    }
+    },
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/haydennyyy/node-ghapi.git"
+    },
+    "homepage": "https://github.com/haydennyyy/node-ghapi#readme",
+    "keywords": [
+        "node",
+        "github",
+        "api",
+        "ghapi"
+    ]
 }
