@@ -61,17 +61,20 @@ function getFollowers (username) {
 }
 
 /**
- * Gets users someone is following by username. Must be run asynchronously.
+ * Check if a user is following another user
  * @function
  * @memberof users
- * @param {string} username The username of the user to find the following users for. (`login` parameter on the API)
+ * @param {string} userone The name of one user.
+ * @param {string} usertwo The name of the other user.
  * @example
- * await ghapi.users.getFollowing('haydennyyy');
+ * await ghapi.users.isFollowing('haydennyyy', 'octocat'); // false
  */
-function getFollowing (username) {
-  return fetch(`https://api.github.com/users/${username}/following`, {
+function isFollowing (userone, usertwo) {
+  return fetch(`https://api.github.com/users/${userone}/following/${usertwo}`, {
     headers: { 'User-Agent': 'node-ghapi' }
-  }).then(following => following.json())
+  }).then(r => {
+    return (r.status === 204) ? true : false;
+  });
 }
 
 /**
@@ -148,7 +151,7 @@ module.exports = { get,
   getRepos,
   getGists,
   getFollowers,
-  getFollowing,
+  isFollowing,
   getStarred,
   getSubscribed,
   getOrgs,

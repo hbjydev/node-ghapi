@@ -18,9 +18,9 @@ describe('Users', () => {
     let result = await ghapi.users.getFollowers('haydennyyy');
     expect(result).to.be.an('array');
   });
-  it('getFollowing should return an array of following', async () => {
-    let result = await ghapi.users.getFollowing('haydennyyy');
-    expect(result).to.be.an('array');
+  it('isFollowing should return a boolean', async () => {
+    let result = await ghapi.users.isFollowing('haydennyyy', 'octocat');
+    expect(result).to.be.a('boolean');
   });
   it('getStarred should return an array of starred repos', async () => {
     let result = await ghapi.users.getStarred('haydennyyy');
