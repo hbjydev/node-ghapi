@@ -64,5 +64,17 @@ describe('Repositories', () => {
   it('getBranches should return a list of branches', async () => {
     let result = await ghapi.repos.getBranches('Microsoft/vscode');
     expect(result).to.be.an('array');
-  })
+  });
+  it('getCollaborators should return a list of collaborators', async () => {
+    let result = await ghapi.repos.getCollaborators('Microsoft/vscode');
+    expect(result).to.be.an('array');
+  });
+  it('getLanguages should return an array of languages used in the repo', async () => {
+    let result = await ghapi.repos.getLanguages('Microsoft/vscode');
+    expect(result).to.be.an('array');
+  });
+  it('getTopics should return an array of topics of the repository', async () => {
+    let result = await ghapi.repos.getTopics('Microsoft/vscode');
+    expect(result).to.be.an('array');
+  });
 });

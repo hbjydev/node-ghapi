@@ -55,7 +55,7 @@ function getAssignees (expression) {
  * await ghapi.repos.getBlobs('haydennyyy/node-ghapi');
  */
 function getBlobs (expression) {
-  return fetch(`https://api.github.com/repos/${expression}/blobs`, {
+  return fetch(`https://api.github.com/repos/${expression}/git/blobs`, {
     headers: { 'User-Agent': 'node-ghapi' }
   }).then(repo => repo.json());
 }
@@ -102,4 +102,32 @@ function getComments (expression) {
   }).then(repo => repo.json());
 }
 
-module.exports = { get, getForks, getAssignees, getBlobs, getBranches, getCollaborators, getComments }
+/**
+ * Gets a list of topics of a repository by expression. Must be run asynchronously.
+ * @function
+ * @memberof repos
+ * @param {string} expression The expression, formatted like `owner/repoName`.
+ * @example
+ * await ghapi.repos.getTopics('haydennyyy/node-ghapi');
+ */
+function getTopics (expression) {
+  return fetch(`https://api.github.com/repos/${expression}/topics`, {
+    headers: { 'User-Agent': 'node-ghapi' }
+  }).then(repo => repo.json());
+}
+
+/**
+ * Gets a list of languages of a repository by expression. Must be run asynchronously.
+ * @function
+ * @memberof repos
+ * @param {string} expression The expression, formatted like `owner/repoName`.
+ * @example
+ * await ghapi.repos.getLanguages('haydennyyy/node-ghapi');
+ */
+function getLanguages (expression) {
+  return fetch(`https://api.github.com/repos/${expression}/languages`, {
+    headers: { 'User-Agent': 'node-ghapi' }
+  }).then(repo => repo.json());
+}
+
+module.exports = { get, getForks, getAssignees, getBlobs, getBranches, getCollaborators, getComments, getTopics, getLanguages }
