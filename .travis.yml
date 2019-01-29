@@ -1,13 +1,16 @@
 language: node_js
 node_js:
-  - '10'
+- '10'
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.13.0
-  - export PATH=$HOME/.yarn/bin:$PATH
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.13.0
+- export PATH=$HOME/.yarn/bin:$PATH
 install: yarn
 jobs:
   include:
-    - stage: test
-      script: yarn test
-    - stage: deploy
-      script: bash ./.travis-deploy.sh
+  - stage: test
+    script: yarn test
+  - stage: deploy
+    script: bash ./.travis-deploy.sh
+env:
+  global:
+    secure: KrtxxgI1jgPC1WqDFI3sK9kL/OlUCwKePNunDimRVhQQrchE2XTlvyU37OFIp7ZT3VrslXKa7Hg6/iV6Zy3WTY/o9PCwr/w4vTYLAtmNjn3RfmmTbhxY5tLAI9Vn7sTGIljiUJnogejTJRvUnG39eiWz/U8I/b9nXhbRCbcjqUy88cA5yQnrPXUMu98i4fp08zlykQ1udBBOc7Bx1DmjroeUHU7WWWukKqYHKUhdQv86PWJg9FzOff6ZEK0P/z+Oh62lNZ8bJKdwXgq4ntVSkb7pfZIIhzhUK29HuxxxnD3u4sJCCSJGf/Xurp5IwRLySJl9ff1vsL2RbYg3YJFtXqbKFBEiW+O88Aw2K1hrnFlDK+f3MmDXHx38gO30AbSLSQaD/qgin5qB85gJ0KdCHVU1Lm6WipUECtmHL7hdYVfhnmHugFjKVQArWArAzkafGlgCxiE17DRGjMWFxJzH9J+GsoXfVefp5LdOEOtgj983EIFq80nzGFb64ssbS9oGqQ60ADF226SMCrlfX3OaRTeYfXLhtgpARtnMvNFi95IUPQPB0FjdC9ULOoOWTAMa+q/rqg98D1FkOSwh7jgnFL3AnVXLQLDeaYOUVUIzFdyUIqm0T1Wvj7tf0iswtoojt012Jss1lIJnzkMmoshY4cQ2KeBg+0Ojk5RgemkLC0s=
