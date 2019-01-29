@@ -21,7 +21,7 @@ const { expect } = require( 'chai' );
 const User = require('../src/users');
 
 describe( 'Users', () => {
-  const user = new User( 'haydennyyy' );
+  const user = new User( 'haydennyyy', process.env.GITHUB_API_TOKEN );
   
   it( '.raw should return JSON from the API.', async () => {
     let raw = await user.raw;
