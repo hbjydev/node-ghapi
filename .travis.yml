@@ -7,8 +7,6 @@ before_install:
 install: yarn
 jobs:
   include:
-  - stage: test
-    script: yarn test
   - stage: deploy
     script: bash ./.travis-deploy.sh
 env:
