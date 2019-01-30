@@ -19,7 +19,7 @@ git clone $REPO out -b $TARGET_BRANCH
 
 npm run docs
 
-mv docs/docs.json out/${TRAVIS_BRANCH//\//_}.json
+mv docs.json out/${TRAVIS_BRANCH//\//_}.json
 
 cd out
 git add --all .

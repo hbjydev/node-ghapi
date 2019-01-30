@@ -11,6 +11,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "test": "mocha test/users.test"
+    "test": "mocha test/users.test",
+    "docs": "npx dg -s src -o master.json --logging"
   }
 }
