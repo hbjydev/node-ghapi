@@ -13,6 +13,6 @@
   },
   "scripts": {
     "test": "mocha test/users.test",
-    "docs": "dg -s src -o master.json --logging"
+    "docs": "dg -s src -o master.json -c guides/.docconfig.json --logging"
   }
 }
