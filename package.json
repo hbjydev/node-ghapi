@@ -4,12 +4,13 @@
   "main": "index.js",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@types/node-fetch": "^2.1.6",
     "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "docsgen": "github:dirigeants/docsgen"
+    "docsgen": "github:dirigeants/docsgen",
+    "mocha": "^5.2.0"
   },
   "scripts": {
     "test": "mocha test/users.test",
