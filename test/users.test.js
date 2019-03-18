@@ -18,10 +18,13 @@
  */
 
 const { expect } = require( 'chai' );
-const { User } = require('../dist');
+const GitHubAPIClient = require('../dist').GitHubAPIClient;
+
+const client = new GitHubAPIClient(process.env.GITHUB_API_TOKEN);
 
 describe('Users', () => {
-  const user = new User('haydennyyy', process.env.GITHUB_API_TOKEN);
+  let user = client.users.get('haydennyyy');
+  user.init();
   
   it('.raw should return JSON from the API.', async () => {
     let raw = await user.raw;
@@ -29,7 +32,7 @@ describe('Users', () => {
   });
   
   it('.followers should return an array from the API.', async () => {
-    let followers = await user.followers;
+    let followers = await user.getFollowers();
     expect(followers).to.be.an('array');
   });
 });
