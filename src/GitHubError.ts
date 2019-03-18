@@ -4,15 +4,13 @@
  * @extends {Error}
  * @public
  */
-class GitHubError extends Error {
+export default class GitHubError extends Error {
   /**
    * Creates an instance of GitHubError.
    * @param {*} args
    * @memberof GitHubError
    */
-  constructor( ...args ) {
-    super( ...args );
+  constructor(...args: any) {
+    super(...args);
   }
 }
-
-module.exports = GitHubError;

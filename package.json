@@ -10,9 +10,14 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "docsgen": "github:dirigeants/docsgen",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "typescript": "^3.3.3333",
+    "tslint": "^5.14.0"
   },
   "scripts": {
+    "build": "tsc",
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "lint:fix": "tslint -c tslint.json src/**/*.ts --fix",
     "test": "mocha test/users.test",
     "docs": "dg -s src -o master.json -c guides/.docconfig.json --logging"
   }

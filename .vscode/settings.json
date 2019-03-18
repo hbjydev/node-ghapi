@@ -1,6 +1,4 @@
 {
-  "licenser.author": "Hayden Young",
-  "licenser.license": "GPLv3",
-  "licenser.useSingleLineStyle": false,
-  "licenser.projectName": "node-ghapi"
+    "licenser.projectName": "Cathy",
+    "editor.tabSize": 2
 }

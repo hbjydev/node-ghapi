@@ -18,18 +18,18 @@
  */
 
 const { expect } = require( 'chai' );
-const User = require('../src/users');
+const { User } = require('../dist');
 
-describe( 'Users', () => {
-  const user = new User( 'haydennyyy', process.env.GITHUB_API_TOKEN );
+describe('Users', () => {
+  const user = new User('haydennyyy', process.env.GITHUB_API_TOKEN);
   
-  it( '.raw should return JSON from the API.', async () => {
+  it('.raw should return JSON from the API.', async () => {
     let raw = await user.raw;
-    expect( raw ).to.be.an('object');
+    expect(raw).to.be.an('object');
   });
   
-  it( '.followers should return an array from the API.', async () => {
+  it('.followers should return an array from the API.', async () => {
     let followers = await user.followers;
-    expect( followers ).to.be.an('array');
+    expect(followers).to.be.an('array');
   });
 });

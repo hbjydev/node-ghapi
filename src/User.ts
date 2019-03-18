@@ -1,5 +1,7 @@
-const fetch = require( 'node-fetch' ).default;
-const APIObject = require( './APIObject' );
+import * as nf from 'node-fetch';
+import APIObject from './APIObject';
+
+const fetch = nf.default;
 
 /**
  * A user from the GitHub API.
@@ -8,6 +10,7 @@ const APIObject = require( './APIObject' );
  * @extends {APIObject}
  */
 class User extends APIObject {
+  public username: string;
 
   /**
    * Creates an instance of User.
@@ -15,8 +18,8 @@ class User extends APIObject {
    * @param {String} token The token to authenticate on
    * @memberof User
    */
-  constructor( username, token ) {
-    super( `https://api.github.com/users`, { path: username, auth: token } );
+  constructor( username: string, token: string ) {
+    super(`https://api.github.com/users`, { path: username, auth: token } );
     this.username = username;
   }
 
@@ -26,8 +29,8 @@ class User extends APIObject {
    * @type {Promise<Object>}
    * @memberof User
    */
-  get followers() {
-    return fetch( `${this.url}/followers`, this.httpOptions ).then( res => res.json() );
+  get followers(): Promise<object> {
+    return this.endpoint('followers');
   }
 
   /**
@@ -36,10 +39,10 @@ class User extends APIObject {
    * @type {Promise<Object>}
    * @memberof User
    */
-  get following() {
-    return fetch( `${this.url}/following`, this.httpOptions ).then( res => res.json() );
+  get following(): Promise<object> {
+    return this.endpoint('following');
   }
 
 }
 
-module.exports = User;
+export default User;

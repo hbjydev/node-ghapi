@@ -1,5 +1,12 @@
-const fetch = require( 'node-fetch' ).default;
-const GitHubError = require( './GitHubError' );
+import * as nf from 'node-fetch';
+import GitHubError from './GitHubError';
+
+const fetch = nf.default;
+
+interface IGitHubAPIConfig {
+  path: string;
+  auth: string;
+}
 
 /**
  * An API object
@@ -7,6 +14,10 @@ const GitHubError = require( './GitHubError' );
  * @public
  */
 class APIObject {
+  public base: string;
+  public conf: IGitHubAPIConfig;
+  public url: string;
+  public httpOptions: object;
 
   /**
    * Creates an instance of APIObject.
@@ -19,14 +30,14 @@ class APIObject {
    * new APIObject( 'https://api.github.com/users', { path: 'haydennyyy' } );
    * // https://api.github.com/users/haydennyyy
    */
-  constructor( baseURL, config ) {
-    /** 
-     * The base API URL (with no trailing slash) 
+  constructor( baseURL: string, config: IGitHubAPIConfig ) {
+    /**
+     * The base API URL (with no trailing slash)
      * @public
      * @type {String}
      */
     this.base        = baseURL;
-    
+
     /**
      * The APIObject configuration object
      * @public
@@ -48,9 +59,9 @@ class APIObject {
      */
     this.httpOptions = {
       headers: {
-        'Authentication': 'Bearer ' + this.conf.auth
-      }
-    }
+        Authentication: 'Bearer ' + this.conf.auth,
+      },
+    };
   }
 
   /**
@@ -60,11 +71,11 @@ class APIObject {
    * @returns {Promise<Object>}
    * @memberof APIObject
    */
-  request( uri ) {
-    let res = fetch( uri )
-      .then( res => res.json() )
-    
-    if( res.message ) throw new GitHubError( res.message );
+  public async endpoint(path: string) {
+    const res = await fetch(`${this.url}/${path}`, this.httpOptions)
+      .then((result) => result.json());
+
+    if (res.message) { throw new GitHubError(res.message); }
 
     return res;
   }
@@ -74,9 +85,10 @@ class APIObject {
    * @type {Promise<JSON>}
    */
   get raw() {
-    return this.request( this.url );
+    return fetch(this.url, this.httpOptions)
+      .then((result) => result.json());
   }
 
 }
 
-module.exports = APIObject;
+export default APIObject;
