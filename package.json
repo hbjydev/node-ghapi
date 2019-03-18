@@ -10,7 +10,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "docsgen": "github:dirigeants/docsgen",
-    "mocha": "^5.2.0",
+    "mocha": "^6.0.2",
     "typescript": "^3.3.3333",
     "tslint": "^5.14.0"
   },
