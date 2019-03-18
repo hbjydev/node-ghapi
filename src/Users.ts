@@ -22,6 +22,12 @@ class Users {
     this.token = token;
   }
 
+  /**
+   * Gets a user, returning a User
+   * @param {string} username The username of the user to get
+   * @returns {User}
+   * @memberof Users
+   */
   public get(username: string): User {
     return new User(username, this.token);
   }
