@@ -1,7 +1,7 @@
 {
   "name": "node-ghapi",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@types/node-fetch": "^2.1.6",
