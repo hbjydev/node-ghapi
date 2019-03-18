@@ -1,6 +1,6 @@
 {
   "name": "node-ghapi",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "main": "dist/index.js",
   "license": "GPL-3.0-or-later",
   "dependencies": {
@@ -11,8 +11,8 @@
     "chai": "^4.2.0",
     "docsgen": "github:dirigeants/docsgen",
     "mocha": "^6.0.2",
-    "typescript": "^3.3.3333",
-    "tslint": "^5.14.0"
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333"
   },
   "scripts": {
     "build": "tsc",
