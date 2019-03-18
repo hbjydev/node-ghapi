@@ -19,6 +19,6 @@
     "lint": "tslint -c tslint.json src/**/*.ts",
     "lint:fix": "tslint -c tslint.json src/**/*.ts --fix",
     "test": "mocha test/users.test",
-    "docs": "dg -s src -o master.json -c guides/.docconfig.json --logging"
+    "docs": "dg -s dist -o master.json -c guides/.docconfig.json --logging"
   }
 }
