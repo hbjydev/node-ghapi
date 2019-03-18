@@ -18,6 +18,7 @@ class APIObject {
   public conf: IGitHubAPIConfig;
   public url: string;
   public httpOptions: object;
+  public raw: object;
 
   /**
    * Creates an instance of APIObject.
@@ -62,6 +63,13 @@ class APIObject {
         Authentication: 'Bearer ' + this.conf.auth,
       },
     };
+
+    /**
+     * The raw JSON returned from GitHub
+     * @public
+     * @type {object}
+     */
+    this.raw = {};
   }
 
   /**
@@ -84,9 +92,13 @@ class APIObject {
    * Gets the raw JSON from the API.
    * @type {Promise<JSON>}
    */
-  get raw() {
-    return fetch(this.url, this.httpOptions)
-      .then((result: any) => result.json());
+  public init() {
+    fetch(this.url, this.httpOptions)
+      .then((res) => res.json())
+      .then((data) => this.raw = data)
+      .catch((err) => {
+        throw new GitHubError(err);
+      });
   }
 
 }

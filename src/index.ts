@@ -17,6 +17,4 @@
  * along with node-ghapi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export { default as User } from './User';
-export { default as APIObject } from './APIObject';
-export { default as GitHubError } from './GitHubError';
+export { default as GitHubAPIClient } from './GitHubAPIClient';
