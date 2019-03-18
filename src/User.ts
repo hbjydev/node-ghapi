@@ -1,8 +1,6 @@
 import * as nf from 'node-fetch';
 import APIObject from './APIObject';
 
-const fetch = nf.default;
-
 /**
  * A user from the GitHub API.
  * @class User
@@ -14,8 +12,8 @@ class User extends APIObject {
 
   /**
    * Creates an instance of User.
-   * @param {String} username The username to get information for.
-   * @param {String} token The token to authenticate on
+   * @param {string} username The username to get information for.
+   * @param {string} token The token to authenticate on
    * @memberof User
    */
   constructor( username: string, token: string ) {
