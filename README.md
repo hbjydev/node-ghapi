@@ -1,4 +1,4 @@
-# node-ghapi
+# node-ghapi [![Build Status](https://haydennyyy.visualstudio.com/node-ghapi/_apis/build/status/Build?branchName=master)](https://haydennyyy.visualstudio.com/node-ghapi/_build/latest?definitionId=3&branchName=master)
 A GitHub API wrapper written in Node.js
 
 ## Usage
