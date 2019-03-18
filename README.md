@@ -3,7 +3,14 @@ A GitHub API wrapper written in Node.js
 
 ## Usage
 ```js
+// JavaScript
 const { User } = require( 'node-ghapi' );
+
+let user = new User('username', 'authentication-token');
+```
+```ts
+// TypeScript
+import { User } from 'node-ghapi';
 
 let user = new User('username', 'authentication-token');
 ```
