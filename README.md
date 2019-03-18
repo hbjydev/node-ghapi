@@ -1,4 +1,4 @@
-# node-ghapi [![Build Status](https://haydennyyy.visualstudio.com/node-ghapi/_apis/build/status/Build?branchName=master)](https://haydennyyy.visualstudio.com/node-ghapi/_build/latest?definitionId=3&branchName=master)
+# node-ghapi [![Build Status](https://haydennyyy.visualstudio.com/node-ghapi/_apis/build/status/Build?branchName=master)](https://haydennyyy.visualstudio.com/node-ghapi/_build/latest?definitionId=3&branchName=master) ![Discord](https://img.shields.io/discord/544110653078634506.svg?color=7289DA&label=Discord&logo=Discord&style=flat-square)
 A GitHub API wrapper written in TypeScript
 
 ## Usage
