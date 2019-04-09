@@ -11,7 +11,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "docsgen": "github:dirigeants/docsgen",
-    "mocha": "^6.0.2",
+    "mocha": "^6.1.2",
     "tslint": "^5.14.0",
     "typescript": "^3.3.4000"
   },
