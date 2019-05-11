@@ -14,11 +14,11 @@ interface IGitHubAPIConfig {
  * @public
  */
 class APIObject {
-  public base: string;
-  public conf: IGitHubAPIConfig;
   public url: string;
-  public httpOptions: object;
   public raw: object;
+  private base: string;
+  private conf: IGitHubAPIConfig;
+  private httpOptions: object;
 
   /**
    * Creates an instance of APIObject.

@@ -6,20 +6,22 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@types/node-fetch": "^2.3.3",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "typescript": "^3.4.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "docsgen": "github:dirigeants/docsgen",
     "mocha": "^6.0.2",
     "tslint": "^5.14.0",
-    "typescript": "^3.4.5"
+    "typedoc": "^0.14.2"
   },
   "scripts": {
     "build": "tsc",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "lint:fix": "tslint -c tslint.json src/**/*.ts --fix",
     "test": "mocha test/users.test",
-    "docs": "dg -s dist -o master.json -c guides/.docconfig.json --logging"
+    "docs": "typedoc",
+    "build-docs": "yarn build && yarn docs",
+    "predeploy": "yarn build-docs && echo \"ghapi.js.org\" > docs/CNAME"
   }
 }

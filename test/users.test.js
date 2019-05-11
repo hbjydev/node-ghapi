@@ -18,12 +18,12 @@
  */
 
 const { expect } = require( 'chai' );
-const GitHubAPIClient = require('../dist').GitHubAPIClient;
+const Client = require('../dist').ghapi.Client;
 
-const client = new GitHubAPIClient(process.env.GITHUB_API_TOKEN);
+const client = new Client(process.env.GITHUB_API_TOKEN);
 
 describe('Users', () => {
-  let user = client.users.get('haydennyyy');
+  let user = client.getUser('haydennyyy');
   user.init();
   
   it('.raw should return JSON from the API.', async () => {

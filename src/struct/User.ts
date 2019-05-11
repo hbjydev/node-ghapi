@@ -35,13 +35,41 @@ interface IUserResponse {
 }
 
 /**
- * A user from the GitHub API.
- * @class User
- * @public
- * @extends {APIObject}
+ * A user from the GitHub API. See [[IUserResponse]] for `.raw` fields.
  */
-class User extends APIObject {
-  public username: string;
+export class User extends APIObject {
+  public login: string;
+  public id: number;
+  public nodeId: string;
+  public avatarUrl: string;
+  public gravatarId: string;
+  public url: string;
+  public htmlUrl: string;
+  public followersUrl: string;
+  public followingUrl: string;
+  public gistsUrl: string;
+  public starredUrl: string;
+  public subscriptionsUrl: string;
+  public organizationsUrl: string;
+  public reposUrl: string;
+  public eventsUrl: string;
+  public receivedEventsUrl: string;
+  public type: string;
+  public siteAdmin: boolean;
+  public name: string;
+  public company: string;
+  public blog: string;
+  public location: string;
+  public email: string;
+  public hireable: boolean;
+  public bio: string;
+  public publicRepos: number;
+  public publicGists: number;
+  public followers: number;
+  public following: number;
+  public createdAt: string;
+  public updatedAt: string;
+
   public raw: IUserResponse;
 
   /**
@@ -53,12 +81,12 @@ class User extends APIObject {
   constructor(username: string, token: string) {
     super(`https://api.github.com/users`, { path: username, auth: token } );
 
-    /**
-     * The user's username
-     * @public
-     * @type {string}
-     */
-    this.username = username;
+    this.login = this.raw.login;
+    this.id = this.raw.id;
+    this.nodeId = this.raw.node_id;
+    this.avatarUrl = this.raw.avatar_url;
+    this.gravatarId = this.raw.gravatar_id;
+    this.url = this.raw.url;
   }
 
   /**

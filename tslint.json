@@ -4,6 +4,7 @@
   "rules": {
     "quotemark": [ true, "single" ],
     "no-console": false,
-    "switch-default": true
+    "switch-default": true,
+    "no-namespace": false
   }
 }
