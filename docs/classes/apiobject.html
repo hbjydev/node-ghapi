@@ -127,13 +127,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new APIObject<span class="tsd-signature-symbol">(</span>baseURL<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, config<span class="tsd-signature-symbol">: </span><a href="../interfaces/igithubapiconfig.html" class="tsd-signature-type">IGitHubAPIConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="apiobject.html" class="tsd-signature-type">APIObject</a></li>
+						<li class="tsd-signature tsd-kind-icon">new APIObject<span class="tsd-signature-symbol">(</span>basePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, config<span class="tsd-signature-symbol">: </span><a href="../interfaces/igithubapiconfig.html" class="tsd-signature-type">IGitHubAPIConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="apiobject.html" class="tsd-signature-type">APIObject</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/294016a/src/struct/APIObject.ts#L21">struct/APIObject.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/38b6f91/src/struct/APIObject.ts#L21">struct/APIObject.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -145,7 +145,7 @@
 									<dd><p>APIObject</p>
 									</dd>
 									<dt>example</dt>
-									<dd><p>new APIObject( &#39;<a href="https://api.github.com/users&#39;">https://api.github.com/users&#39;</a>, { path: &#39;haydennyyy&#39; } );
+									<dd><p>new APIObject( &#39;users&#39;, { path: &#39;haydennyyy&#39; } );
 										// <a href="https://api.github.com/users/haydennyyy">https://api.github.com/users/haydennyyy</a></p>
 									</dd>
 								</dl>
@@ -153,10 +153,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>baseURL: <span class="tsd-signature-type">string</span></h5>
+									<h5>basePath: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The base URL</p>
+											<p>The base path</p>
 										</div>
 									</div>
 								</li>
@@ -182,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">base<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/294016a/src/struct/APIObject.ts#L19">struct/APIObject.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/38b6f91/src/struct/APIObject.ts#L19">struct/APIObject.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -192,7 +192,7 @@
 					<div class="tsd-signature tsd-kind-icon">conf<span class="tsd-signature-symbol">:</span> <a href="../interfaces/igithubapiconfig.html" class="tsd-signature-type">IGitHubAPIConfig</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/294016a/src/struct/APIObject.ts#L20">struct/APIObject.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/38b6f91/src/struct/APIObject.ts#L20">struct/APIObject.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -202,7 +202,7 @@
 					<div class="tsd-signature tsd-kind-icon">http<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/294016a/src/struct/APIObject.ts#L21">struct/APIObject.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/38b6f91/src/struct/APIObject.ts#L21">struct/APIObject.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -212,7 +212,7 @@
 					<div class="tsd-signature tsd-kind-icon">raw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/294016a/src/struct/APIObject.ts#L18">struct/APIObject.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/38b6f91/src/struct/APIObject.ts#L18">struct/APIObject.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -222,7 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/294016a/src/struct/APIObject.ts#L17">struct/APIObject.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/38b6f91/src/struct/APIObject.ts#L17">struct/APIObject.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -239,7 +239,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/294016a/src/struct/APIObject.ts#L82">struct/APIObject.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/38b6f91/src/struct/APIObject.ts#L82">struct/APIObject.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -275,7 +275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/294016a/src/struct/APIObject.ts#L95">struct/APIObject.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/haydennyyy/node-ghapi/blob/38b6f91/src/struct/APIObject.ts#L95">struct/APIObject.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
