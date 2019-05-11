@@ -17,4 +17,4 @@
  * along with node-ghapi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export { default as ghapi } from './GitHubAPIClient';
+export { default as ghapi, formatExpression } from './GitHubAPIClient';
