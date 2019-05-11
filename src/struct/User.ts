@@ -149,7 +149,7 @@ export class User extends APIObject {
   public updatedAt: string;
 
   public raw: IUserResponse;
- 
+
   /*
    * The user's followers URL
    */
@@ -194,7 +194,6 @@ export class User extends APIObject {
    * The user's received events URL
    */
   private receivedEventsUrl: string;
-
 
   /**
    * Creates an instance of User.
@@ -256,6 +255,18 @@ export class User extends APIObject {
    */
   public getFollowing(): Promise<object> {
     return this.endpoint('following');
+  }
+
+  public getGists(): Promise<object> {
+    return this.endpoint('gists')
+  }
+
+  public getStarred(): Promise<object> {
+    return this.endpoint('starred');
+  }
+
+  public getSubscriptions(): Promise<object> {
+    return this.endpoint('subscriptions');
   }
 
 }
