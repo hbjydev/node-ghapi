@@ -9,7 +9,7 @@ enum ExpressionTypes {
  * A GitHub API client
  * @class GitHubAPIClient
  */
-export class Client {
+export default class Client {
   /**
    * Creates an instance of GitHubAPIClient.
    * @param {string} token

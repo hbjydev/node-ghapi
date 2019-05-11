@@ -18,9 +18,9 @@
  */
 
 const { expect } = require( 'chai' );
-const Client = require('../dist').ghapi.Client;
+const { ghapi } = require('../dist');
 
-const client = new Client(process.env.GITHUB_API_TOKEN);
+const client = new ghapi(process.env.GITHUB_API_TOKEN);
 
 describe('Users', () => {
   let user = client.getUser('haydennyyy');
@@ -31,8 +31,18 @@ describe('Users', () => {
     expect(raw).to.be.an('object');
   });
   
-  it('.followers should return an array from the API.', async () => {
+  it('.getFollowers should return an array from the API.', async () => {
     let followers = await user.getFollowers();
     expect(followers).to.be.an('array');
+  });
+
+  it('.getFollowing should return an array from the API.', async () => {
+    let following = await user.getFollowing();
+    expect(following).to.be.an('array');
+  });
+
+  it('.getGists should return an array from the API.', async () => {
+    let gists = await user.getGists();
+    expect(gists).to.be.an('array');
   });
 });

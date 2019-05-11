@@ -22,22 +22,22 @@ class APIObject {
 
   /**
    * Creates an instance of APIObject.
-   * @param {string} baseURL The base URL
+   * @param {string} basePath The base path
    * @param {object} config The configuration for the API object
    * @param {string} config.path The path for requests. See example for more info.
    * @param {string} config.auth The authentication token to use when sending requests.
    * @memberof APIObject
    * @example
-   * new APIObject( 'https://api.github.com/users', { path: 'haydennyyy' } );
+   * new APIObject( 'users', { path: 'haydennyyy' } );
    * // https://api.github.com/users/haydennyyy
    */
-  constructor( baseURL: string, config: IGitHubAPIConfig ) {
+  constructor( basePath: string, config: IGitHubAPIConfig ) {
     /**
      * The base API URL (with no trailing slash)
      * @public
      * @type {string}
      */
-    this.base        = baseURL;
+    this.base        = basePath;
 
     /**
      * The APIObject configuration object
@@ -51,7 +51,7 @@ class APIObject {
      * @public
      * @type {string}
      */
-    this.url         = `${this.base}/${this.conf.path}`;
+    this.url = `https://api.github.com/${this.base}/${config.path}`;
 
     /**
      * The HTTP options forwarded to node-fetch

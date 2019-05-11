@@ -202,7 +202,7 @@ export class User extends APIObject {
    * @memberof User
    */
   constructor(username: string, token: string) {
-    super(`https://api.github.com/users`, { path: username, auth: token } );
+    super('users', { path: username, auth: token } );
 
     this.login = this.raw.login;
     this.id = this.raw.id;
@@ -257,14 +257,32 @@ export class User extends APIObject {
     return this.endpoint('following');
   }
 
+  /**
+   * Gets a list of public gists the user owns
+   * @readonly
+   * @type {Promise<Object>}
+   * @memberof User
+   */
   public getGists(): Promise<object> {
-    return this.endpoint('gists')
+    return this.endpoint('gists');
   }
 
+  /**
+   * Gets a list of repos the user has starred
+   * @readonly
+   * @type {Promise<Object>}
+   * @memberof User
+   */
   public getStarred(): Promise<object> {
     return this.endpoint('starred');
   }
 
+  /**
+   * Gets a list of subscriptions the user has
+   * @readonly
+   * @type {Promise<Object>}
+   * @memberof User
+   */
   public getSubscriptions(): Promise<object> {
     return this.endpoint('subscriptions');
   }
