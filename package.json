@@ -6,7 +6,7 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@types/node-fetch": "^2.3.3",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.0",
     "typescript": "^3.4.5"
   },
   "devDependencies": {
